@@ -6,23 +6,14 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-// Middleware to handle static files and JSON requests
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Add middleware to parse URL-encoded bodies (for form submissions)
 app.use(express.urlencoded({ extended: true }));
-
-// Add middleware to parse JSON bodies (for potential future API usage)
 app.use(express.json());
-
-// Enable CORS if needed
 app.use(cors());
 
-// Set EJS as the template engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Function to generate a random password
 function generatePassword(length, options) {
   const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const lowerCaseChars = 'abcdefghijklmnopqrstuvwxyz';
@@ -47,12 +38,10 @@ function generatePassword(length, options) {
   return password;
 }
 
-// Route to render the password generator form
 app.get('/', (req, res) => {
   res.render('index', { password: '', error: '' });
 });
 
-// Route to generate password
 app.post('/generate-password', (req, res) => {
   const { length, uppercase, lowercase, numbers, specialChars } = req.body;
 
