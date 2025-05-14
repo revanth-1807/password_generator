@@ -9,7 +9,6 @@
 <body>
   <div class="container">
     <h1>Password Generator</h1>
-    
     <form action="/generate-password" method="POST">
       <label for="length">Password Length (min 6):</label>
       <input type="number" id="length" name="length" min="6" required>
@@ -29,18 +28,11 @@
       <button type="submit">Generate Password</button>
     </form>
 
-    <% if (password) { %>
-      <div class="result">
-        <h2>Generated Password:</h2>
-        <p><strong><%= password %></strong></p>
-      </div>
-    <% } %>
-
-    <% if (error) { %>
-      <div class="error">
-        <p><strong><%= error %></strong></p>
-      </div>
-    <% } %>
+    <div class="result">
+      <h3>Generated Password:</h3>
+      <p class="password-display"><%= password %></p>
+      <p class="error"><%= error %></p>
+    </div>
   </div>
 </body>
 </html>
