@@ -1,17 +1,22 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
   }
   
   .container {
-    width: 50%;
-    margin: 50px auto;
-    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   h1 {
@@ -25,41 +30,46 @@ body {
   }
   
   label {
-    font-size: 1rem;
+    font-weight: bold;
   }
   
-  input[type="number"],
   input[type="checkbox"] {
-    margin-left: 10px;
+    margin-right: 10px;
   }
   
   button {
-    padding: 10px;
-    font-size: 1rem;
     background-color: #4CAF50;
     color: white;
+    padding: 10px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 4px;
   }
   
   button:hover {
     background-color: #45a049;
   }
   
-  .result, .error {
+  .result {
     margin-top: 20px;
-    padding: 15px;
-    border-radius: 5px;
   }
   
-  .result {
-    background-color: #d4edda;
-    color: #155724;
+  .password-display {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    font-size: 1.2em;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 10px;
   }
   
   .error {
-    background-color: #f8d7da;
-    color: #721c24;
+    color: red;
+    text-align: center;
+    font-weight: bold;
   }
   
